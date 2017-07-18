@@ -18,6 +18,17 @@ Bundler.require(*Rails.groups)
 
 module AuthenticateAPI
   class Application < Rails::Application
+    config.generators do |g|
+      g.test_framework :rspec,
+                       fixtures: true,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       controller_specs: true,
+                       request_specs: false
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
+    end
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
@@ -31,3 +42,5 @@ module AuthenticateAPI
     config.api_only = true
   end
 end
+
+
