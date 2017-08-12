@@ -11,6 +11,10 @@ class LoginController < ApplicationController
     save_session
   end
 
+  def check
+    @session = Session.find_by(access_token: params[:access_token])
+  end
+
   def save_session
     user = User.find_by(user_id: params[:user_id])
     Session.create(user: user, access_token: @session_key)
