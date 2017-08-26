@@ -1,4 +1,8 @@
 class ImagePostController < ApplicationController
+  def index
+    @image_posts = ImagePost.all
+  end
+
   def create
     image_post = ImagePost.new(image_post_paramters)
     image_post.save
