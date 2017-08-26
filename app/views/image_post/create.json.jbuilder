@@ -1,0 +1,1 @@
+json.set! :image_url, @image_url
