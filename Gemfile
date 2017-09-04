@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'mysql2'
 
 gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
